@@ -16,21 +16,21 @@ export default class Canvas {
     container.appendChild(this.renderer.domElement);
 
     // カメラを作成 (視野角, 画面のアスペクト比, カメラに映る最短距離, カメラに映る最遠距離)
-    this.camera = new THREE.PerspectiveCamera(60, this.w / this.h, 1, 10);
-    this.camera.position.z = 3;// カメラを遠ざける
+    this.camera = new THREE.PerspectiveCamera(80, this.w / this.h, 1, 10);
+    this.camera.position.z = 4;// カメラを遠ざける
 
     // シーンを作成
     this.scene = new THREE.Scene();
 
     // ライトを作成
     this.light = new THREE.PointLight(0x00ffff);
-    this.light.position.set(2, 2, 2);// ライトの位置を設定
+    this.light.position.set(2, 2, 5);// ライトの位置を設定
 
     // ライトをシーンに追加
     this.scene.add(this.light);
 
     // 立方体のジオメトリを作成(幅, 高さ, 奥行き)
-    const geo = new THREE.BoxGeometry(1, 1, 1);
+    const geo = new THREE.BoxGeometry(2, 2.5, 1.5);
 
     // マテリアルを作成
     const mat = new THREE.MeshLambertMaterial({ color: 0xffffff });
